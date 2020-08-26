@@ -32,8 +32,10 @@ app.use("/api/items", items);
 
 //Serve Static assests if in production
 if (process.env.NODE_ENV === "production") {
+  console.log("made it here to production")
   app.use(express.static("client/build"));
   app.get("*", (req, res) => {
+    console.log("should be getting file path now?")
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
