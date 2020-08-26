@@ -13,7 +13,7 @@ const app = express();
 app.use(bodyParser.json());
 
 //DB configuration
-const db = require("./config/keys").mongoURI;
+const db = process.env.MONGO_URI;
 
 //Set mongoose settings
 mongoose.set("useNewUrlParser", true);
