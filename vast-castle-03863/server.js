@@ -29,12 +29,6 @@ mongoose
 
 //Routes
 app.use("/api/items", items);
-app
-  .get("/", function (req, res) {
-    let result = "App is running";
-    res.send(result);
-  })
-
 
 //Serve Static assests if in production
 if (process.env.NODE_ENV === "production") {
@@ -46,6 +40,4 @@ if (process.env.NODE_ENV === "production") {
 
 const port = process.env.PORT | 5000;
 
-app.listen(proces.env.PORT || 5000, () =>
-  console.log(`Server started on port ${port}`)
-);
+app.listen(port, () => console.log(`Server started on port ${port}`));
